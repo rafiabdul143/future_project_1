@@ -1,0 +1,83 @@
+{
+  "name": "foodie-express",
+  "version": "1.0.0",
+  "description": "Modern food delivery platform with microservices architecture",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:gateway\" \"npm run dev:services\" \"npm run dev:frontend\"",
+    "dev:gateway": "cd services/api-gateway && npm run dev",
+    "dev:services": "concurrently \"npm run dev:user\" \"npm run dev:restaurant\" \"npm run dev:menu\" \"npm run dev:order\" \"npm run dev:payment\" \"npm run dev:delivery\" \"npm run dev:notification\" \"npm run dev:review\" \"npm run dev:search\"",
+    "dev:user": "cd services/user-service && npm run dev",
+    "dev:restaurant": "cd services/restaurant-service && npm run dev",
+    "dev:menu": "cd services/menu-service && npm run dev",
+    "dev:order": "cd services/order-service && npm run dev",
+    "dev:payment": "cd services/payment-service && npm run dev",
+    "dev:delivery": "cd services/delivery-service && npm run dev",
+    "dev:notification": "cd services/notification-service && npm run dev",
+    "dev:review": "cd services/review-service && npm run dev",
+    "dev:search": "cd services/search-service && npm run dev",
+    "dev:frontend": "concurrently \"npm run dev:customer\" \"npm run dev:restaurant-portal\" \"npm run dev:driver\" \"npm run dev:admin\"",
+    "dev:customer": "cd frontend/customer-app && npm start",
+    "dev:restaurant-portal": "cd frontend/restaurant-portal && npm start",
+    "dev:driver": "cd frontend/driver-app && npm start",
+    "dev:admin": "cd frontend/admin-dashboard && npm start",
+    "install:all": "npm install && npm run install:services && npm run install:frontend",
+    "install:services": "concurrently \"cd services/api-gateway && npm install\" \"cd services/user-service && npm install\" \"cd services/restaurant-service && npm install\" \"cd services/menu-service && npm install\" \"cd services/order-service && npm install\" \"cd services/payment-service && npm install\" \"cd services/delivery-service && npm install\" \"cd services/notification-service && npm install\" \"cd services/review-service && npm install\" \"cd services/search-service && npm install\"",
+    "install:frontend": "concurrently \"cd frontend/customer-app && npm install\" \"cd frontend/restaurant-portal && npm install\" \"cd frontend/driver-app && npm install\" \"cd frontend/admin-dashboard && npm install\"",
+    "build": "npm run build:services && npm run build:frontend",
+    "build:services": "concurrently \"cd services/api-gateway && npm run build\" \"cd services/user-service && npm run build\" \"cd services/restaurant-service && npm run build\" \"cd services/menu-service && npm run build\" \"cd services/order-service && npm run build\" \"cd services/payment-service && npm run build\" \"cd services/delivery-service && npm run build\" \"cd services/notification-service && npm run build\" \"cd services/review-service && npm run build\" \"cd services/search-service && npm run build\"",
+    "build:frontend": "concurrently \"cd frontend/customer-app && npm run build\" \"cd frontend/restaurant-portal && npm run build\" \"cd frontend/driver-app && npm run build\" \"cd frontend/admin-dashboard && npm run build\"",
+    "test": "npm run test:services && npm run test:frontend",
+    "test:services": "concurrently \"cd services/user-service && npm test\" \"cd services/restaurant-service && npm test\" \"cd services/menu-service && npm test\" \"cd services/order-service && npm test\" \"cd services/payment-service && npm test\" \"cd services/delivery-service && npm test\" \"cd services/notification-service && npm test\" \"cd services/review-service && npm test\" \"cd services/search-service && npm test\"",
+    "test:frontend": "concurrently \"cd frontend/customer-app && npm test\" \"cd frontend/restaurant-portal && npm test\" \"cd frontend/driver-app && npm test\" \"cd frontend/admin-dashboard && npm test\"",
+    "docker:build": "docker-compose build",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "docker:logs": "docker-compose logs -f",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,md}\"",
+    "prepare": "husky install"
+  },
+  "keywords": [
+    "food-delivery",
+    "microservices",
+    "react",
+    "nodejs",
+    "mongodb",
+    "real-time",
+    "gps-tracking"
+  ],
+  "author": "FoodieExpress Team",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-react": "^7.34.1",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
+    "prettier": "^3.2.5"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,css,md}": [
+      "prettier --write"
+    ]
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rafiabdul143/future_project_1.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rafiabdul143/future_project_1/issues"
+  },
+  "homepage": "https://github.com/rafiabdul143/future_project_1#readme"
+}
