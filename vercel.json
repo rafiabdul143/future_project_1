@@ -43,10 +43,5 @@
   ],
   "env": {
     "NODE_ENV": "production"
-  },
-  "functions": {
-    "preview/server.js": {
-      "maxDuration": 30
-    }
   }
 }
