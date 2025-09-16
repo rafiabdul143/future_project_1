@@ -37,7 +37,15 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,md}\"",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "preview:start": "cd preview && npm install && npm start",
+    "preview:dev": "cd preview && npm run dev",
+    "preview:restart": "cd preview && npm restart",
+    "preview:logs": "cd preview && npm run logs",
+    "preview:minimal": "cd preview && npm run minimal",
+    "simulate:orders": "cd preview && npm run simulate:orders",
+    "simulate:delivery": "cd preview && npm run simulate:delivery",
+    "simulate:traffic": "cd preview && npm run simulate:traffic"
   },
   "keywords": [
     "food-delivery",

@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🍕 FoodieExpress - Preview Demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+        
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .apps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .app-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+        }
+        
+        .app-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+        
+        .app-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+        
+        .app-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        .app-card p {
+            color: #666;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+        
+        .app-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .app-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .features {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .features h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .feature {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .credentials {
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 30px;
+            color: white;
+            backdrop-filter: blur(10px);
+        }
+        
+        .credentials h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .cred-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        
+        .cred-item {
+            background: rgba(255,255,255,0.1);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .cred-item h4 {
+            margin-bottom: 10px;
+            color: #fff;
+        }
+        
+        .cred-item p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .status {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .status.loading {
+            background: #FF9800;
+        }
+        
+        .status.error {
+            background: #F44336;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .apps-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .container {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="status" id="status">🟢 Preview Server Online</div>
+    
+    <div class="container">
+        <div class="header">
+            <h1>🍕 FoodieExpress</h1>
+            <p>Complete Food Delivery Platform - Interactive Preview</p>
+        </div>
+        
+        <div class="apps-grid">
+            <div class="app-card">
+                <div class="app-icon">🛍️</div>
+                <h3>Customer App</h3>
+                <p>Browse restaurants, place orders, track deliveries in real-time</p>
+                <a href="/customer" class="app-button">Launch Customer App</a>
+            </div>
+            
+            <div class="app-card">
+                <div class="app-icon">🏪</div>
+                <h3>Restaurant Portal</h3>
+                <p>Manage menus, process orders, view analytics and reports</p>
+                <a href="/restaurant" class="app-button">Launch Restaurant Portal</a>
+            </div>
+            
+            <div class="app-card">
+                <div class="app-icon">🚗</div>
+                <h3>Driver App</h3>
+                <p>Accept deliveries, navigate routes, track earnings</p>
+                <a href="/driver" class="app-button">Launch Driver App</a>
+            </div>
+            
+            <div class="app-card">
+                <div class="app-icon">👨‍💼</div>
+                <h3>Admin Dashboard</h3>
+                <p>Platform management, user oversight, system monitoring</p>
+                <a href="/admin" class="app-button">Launch Admin Dashboard</a>
+            </div>
+        </div>
+        
+        <div class="features">
+            <h2>🚀 Preview Features</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon">📱</div>
+                    <h4>Real-time Updates</h4>
+                    <p>Live order tracking and status updates</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🗺️</div>
+                    <h4>GPS Tracking</h4>
+                    <p>Simulated driver location tracking</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">💳</div>
+                    <h4>Mock Payments</h4>
+                    <p>Simulated payment processing</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">📊</div>
+                    <h4>Analytics</h4>
+                    <p>Sample dashboards and reports</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🔔</div>
+                    <h4>Notifications</h4>
+                    <p>Real-time notification system</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🔍</div>
+                    <h4>Search & Filter</h4>
+                    <p>Advanced restaurant and menu search</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="credentials">
+            <h2>🔑 Preview Login Credentials</h2>
+            <div class="cred-grid">
+                <div class="cred-item">
+                    <h4>Customer</h4>
+                    <p>customer@preview.com<br>preview123</p>
+                </div>
+                <div class="cred-item">
+                    <h4>Restaurant</h4>
+                    <p>restaurant@preview.com<br>preview123</p>
+                </div>
+                <div class="cred-item">
+                    <h4>Driver</h4>
+                    <p>driver@preview.com<br>preview123</p>
+                </div>
+                <div class="cred-item">
+                    <h4>Admin</h4>
+                    <p>admin@preview.com<br>preview123</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Check server status
+        async function checkStatus() {
+            try {
+                const response = await fetch('/health');
+                const data = await response.json();
+                const status = document.getElementById('status');
+                
+                if (data.status === 'healthy') {
+                    status.textContent = '🟢 Preview Server Online';
+                    status.className = 'status';
+                } else {
+                    status.textContent = '🟡 Server Issues';
+                    status.className = 'status loading';
+                }
+            } catch (error) {
+                const status = document.getElementById('status');
+                status.textContent = '🔴 Server Offline';
+                status.className = 'status error';
+            }
+        }
+        
+        // Check status every 30 seconds
+        checkStatus();
+        setInterval(checkStatus, 30000);
+        
+        // Add click animations
+        document.querySelectorAll('.app-button').forEach(button => {
+            button.addEventListener('click', function(e) {
+                // Create ripple effect
+                const ripple = document.createElement('span');
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+                
+                ripple.style.width = ripple.style.height = size + 'px';
+                ripple.style.left = x + 'px';
+                ripple.style.top = y + 'px';
+                ripple.classList.add('ripple');
+                
+                this.appendChild(ripple);
+                
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+            });
+        });
+    </script>
+</body>
+</html>
