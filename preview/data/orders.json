@@ -1,0 +1,133 @@
+[
+  {
+    "id": 1001,
+    "orderNumber": "FE-1001",
+    "customerId": 1,
+    "restaurantId": 1,
+    "driverId": 3,
+    "items": [
+      {
+        "menuItemId": 1,
+        "name": "Margherita Pizza",
+        "price": 14.99,
+        "quantity": 1,
+        "customizations": []
+      },
+      {
+        "menuItemId": 3,
+        "name": "Spaghetti Carbonara",
+        "price": 18.99,
+        "quantity": 1,
+        "customizations": []
+      }
+    ],
+    "subtotal": 33.98,
+    "tax": 2.72,
+    "deliveryFee": 2.99,
+    "discount": 0,
+    "total": 39.69,
+    "status": "delivered",
+    "paymentMethod": "credit_card",
+    "paymentStatus": "paid",
+    "deliveryAddress": {
+      "street": "123 Main St",
+      "city": "New York",
+      "state": "NY",
+      "zipCode": "10001",
+      "coordinates": {
+        "lat": 40.7128,
+        "lng": -74.0060
+      }
+    },
+    "estimatedDeliveryTime": "2024-01-15T12:00:00Z",
+    "actualDeliveryTime": "2024-01-15T11:55:00Z",
+    "specialInstructions": "Ring doorbell twice",
+    "createdAt": "2024-01-15T11:15:00Z",
+    "updatedAt": "2024-01-15T11:55:00Z"
+  },
+  {
+    "id": 1002,
+    "orderNumber": "FE-1002",
+    "customerId": 1,
+    "restaurantId": 3,
+    "driverId": null,
+    "items": [
+      {
+        "menuItemId": 6,
+        "name": "Classic Cheeseburger",
+        "price": 12.99,
+        "quantity": 2,
+        "customizations": ["Extra cheese", "No pickles"]
+      }
+    ],
+    "subtotal": 25.98,
+    "tax": 2.08,
+    "deliveryFee": 1.99,
+    "discount": 0,
+    "total": 30.05,
+    "status": "preparing",
+    "paymentMethod": "credit_card",
+    "paymentStatus": "paid",
+    "deliveryAddress": {
+      "street": "123 Main St",
+      "city": "New York",
+      "state": "NY",
+      "zipCode": "10001",
+      "coordinates": {
+        "lat": 40.7128,
+        "lng": -74.0060
+      }
+    },
+    "estimatedDeliveryTime": "2024-01-16T13:30:00Z",
+    "actualDeliveryTime": null,
+    "specialInstructions": "Call when arrived",
+    "createdAt": "2024-01-16T12:45:00Z",
+    "updatedAt": "2024-01-16T12:50:00Z"
+  },
+  {
+    "id": 1003,
+    "orderNumber": "FE-1003",
+    "customerId": 1,
+    "restaurantId": 4,
+    "driverId": 3,
+    "items": [
+      {
+        "menuItemId": 8,
+        "name": "Salmon Sashimi",
+        "price": 22.99,
+        "quantity": 1,
+        "customizations": []
+      },
+      {
+        "menuItemId": 9,
+        "name": "California Roll",
+        "price": 8.99,
+        "quantity": 2,
+        "customizations": []
+      }
+    ],
+    "subtotal": 40.97,
+    "tax": 3.28,
+    "deliveryFee": 4.99,
+    "discount": 5.00,
+    "total": 44.24,
+    "status": "on_the_way",
+    "paymentMethod": "paypal",
+    "paymentStatus": "paid",
+    "deliveryAddress": {
+      "street": "123 Main St",
+      "city": "New York",
+      "state": "NY",
+      "zipCode": "10001",
+      "coordinates": {
+        "lat": 40.7128,
+        "lng": -74.0060
+      }
+    },
+    "estimatedDeliveryTime": "2024-01-16T14:15:00Z",
+    "actualDeliveryTime": null,
+    "specialInstructions": "Leave at door",
+    "createdAt": "2024-01-16T13:20:00Z",
+    "updatedAt": "2024-01-16T14:00:00Z"
+  }
+]

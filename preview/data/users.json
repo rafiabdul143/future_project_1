@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "email": "customer@preview.com",
+    "password": "preview123",
+    "role": "customer",
+    "firstName": "John",
+    "lastName": "Doe",
+    "phone": "+1234567890",
+    "isVerified": true,
+    "isActive": true,
+    "createdAt": "2024-01-15T10:30:00Z"
+  },
+  {
+    "id": 2,
+    "email": "restaurant@preview.com",
+    "password": "preview123",
+    "role": "restaurant",
+    "firstName": "Mario",
+    "lastName": "Rossi",
+    "phone": "+1234567891",
+    "restaurantId": 1,
+    "isVerified": true,
+    "isActive": true,
+    "createdAt": "2024-01-10T09:15:00Z"
+  },
+  {
+    "id": 3,
+    "email": "driver@preview.com",
+    "password": "preview123",
+    "role": "driver",
+    "firstName": "Mike",
+    "lastName": "Johnson",
+    "phone": "+1234567892",
+    "vehicle": {
+      "type": "car",
+      "make": "Honda",
+      "model": "Civic",
+      "licensePlate": "ABC123",
+      "color": "Blue"
+    },
+    "isVerified": true,
+    "isActive": true,
+    "createdAt": "2024-01-12T14:20:00Z"
+  },
+  {
+    "id": 4,
+    "email": "admin@preview.com",
+    "password": "preview123",
+    "role": "admin",
+    "firstName": "Sarah",
+    "lastName": "Wilson",
+    "phone": "+1234567893",
+    "isVerified": true,
+    "isActive": true,
+    "createdAt": "2024-01-01T08:00:00Z"
+  }
+]

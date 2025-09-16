@@ -1,0 +1,52 @@
+{
+  "version": 2,
+  "name": "foodie-express-preview",
+  "builds": [
+    {
+      "src": "preview/server.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "preview/public/**",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/health",
+      "dest": "preview/server.js"
+    },
+    {
+      "src": "/api/(.*)",
+      "dest": "preview/server.js"
+    },
+    {
+      "src": "/customer(.*)",
+      "dest": "preview/public/index.html"
+    },
+    {
+      "src": "/restaurant(.*)",
+      "dest": "preview/public/index.html"
+    },
+    {
+      "src": "/driver(.*)",
+      "dest": "preview/public/index.html"
+    },
+    {
+      "src": "/admin(.*)",
+      "dest": "preview/public/index.html"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "preview/public/index.html"
+    }
+  ],
+  "env": {
+    "NODE_ENV": "production"
+  },
+  "functions": {
+    "preview/server.js": {
+      "maxDuration": 30
+    }
+  }
+}
